@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Lady Lia | Luxury For Less</title>
+  
+  <!-- Google Fonts: Great Vibes (Stylish Cursive), Playfair Display (Luxury Serif), Oswald & Inter (Clean Catalog Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #141210;
+      --bg-cream: #f6f2ee;
+      --card-white: #ffffff;
+      --gold-light: #ffe299;
+      --gold-primary: #d4a038;
+      --gold-glow: rgba(255, 196, 77, 0.75);
+      --brand-pink: #e6007e;
+      --brand-pink-light: #fce4f2;
+      --accent-rust: #9e3a26;
+      --whatsapp-green: #1f8b4c;
+      --whatsapp-hover: #186e3b;
+      --text-dark: #1f1f1f;
+      --text-muted: #595959;
+      --text-light: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* ================= HEADER & NAVIGATION ================= */
+    header {
+      background-color: var(--bg-dark);
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(212, 160, 56, 0.25);
+    }
+
+    .brand-mini {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    .brand-mini .cursive {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: var(--gold-light);
+      text-shadow: 0 0 8px var(--gold-glow);
+    }
+
+    .brand-mini .serif {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .menu-toggle {
+      background-color: var(--brand-pink);
+      border: none;
+      width: 52px;
+      height: 48px;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .menu-toggle:hover {
+      background-color: #c4006b;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 28px;
+      height: 3.5px;
+      background-color: #ffffff;
+      border-radius: 2px;
+    }
+
+    /* Slide-down Navigation Drawer */
+    .nav-drawer {
+      display: none;
+      background-color: #1c1917;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid var(--brand-pink);
+    }
+
+    .nav-drawer.open {
+      display: block;
+    }
+
+    .nav-drawer a {
+      display: block;
+      color: var(--text-light);
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 1.5px;
+      padding: 12px 0;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-drawer a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ================= HERO SECTION (WOOD SLAT & BACKLIT SIGN) ================= */
+    .hero {
+      min-height: 80vh;
+      background: 
+        radial-gradient(circle at center, rgba(20, 18, 16, 0.42) 0%, rgba(12, 10, 8, 0.9) 100%),
+        repeating-linear-gradient(
+          90deg,
+          #3b2316 0px,
+          #3b2316 14px,
+          #1a0f0a 14px,
+          #1a0f0a 22px
+        );
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+
+    /* Clothes Hanger Emblem from Flyer */
+    .hanger-icon {
+      width: 64px;
+      height: 38px;
+      stroke: var(--brand-pink);
+      stroke-width: 3.5;
+      fill: none;
+      margin-bottom: 6px;
+      filter: drop-shadow(0 0 8px rgba(230, 0, 126, 0.5));
+    }
+
+    /* Backlit Storefront Signage Recreation */
+    .signage-wrapper {
+      margin-bottom: 22px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .signage-shop {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(3.8rem, 10vw, 6.2rem);
+      color: #fff3d1;
+      line-height: 0.85;
+      font-weight: 400;
+      text-shadow: 
+        0 0 10px var(--gold-glow),
+        0 0 24px var(--gold-glow),
+        0 0 45px rgba(212, 160, 56, 0.6);
+      transform: rotate(-3deg);
+      margin-bottom: 4px;
+    }
+
+    .signage-ladylia {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 9vw, 5.5rem);
+      color: #fff6db;
+      letter-spacing: 2px;
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 12px;
+      text-shadow: 
+        0 0 12px var(--gold-glow),
+        0 0 28px var(--gold-glow),
+        0 4px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .bag-icon {
+      width: clamp(28px, 6vw, 46px);
+      height: clamp(32px, 6.5vw, 50px);
+      fill: var(--gold-light);
+      filter: drop-shadow(0 0 10px var(--gold-glow));
+      transform: translateY(4px);
+    }
+
+    .signage-swash {
+      width: 85%;
+      height: 18px;
+      margin: 8px auto 0;
+      display: block;
+      filter: drop-shadow(0 0 8px var(--gold-glow));
+    }
+
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.3rem, 3.8vw, 1.9rem);
+      color: #ffffff;
+      letter-spacing: 3px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .hero-sub {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+      color: var(--gold-light);
+      margin-bottom: 32px;
+    }
+
+    .cta-button {
+      background-color: var(--brand-pink);
+      color: #ffffff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 42px;
+      border-radius: 30px;
+      box-shadow: 0 6px 20px rgba(230, 0, 126, 0.4);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #c4006b;
+      transform: translateY(-2px);
+    }
+
+    /* ================= CATALOG / PRICE LIST SECTION ================= */
+    .catalog-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 55px 20px 70px;
+    }
+
+    .price-list-banner {
+      text-align: center;
+      margin-bottom: 38px;
+      position: relative;
+    }
+
+    .price-list-pill {
+      display: inline-block;
+      background-color: var(--brand-pink);
+      color: #ffffff;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 8px 38px;
+      border-radius: 40px;
+      box-shadow: 0 4px 14px rgba(230, 0, 126, 0.25);
+    }
+
+    .category-card {
+      background-color: var(--card-white);
+      border-radius: 18px;
+      padding: 32px 26px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+      border-top: 4px solid var(--brand-pink);
+    }
+
+    .category-heading {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 22px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--brand-pink-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .category-heading span {
+      font-size: 0.95rem;
+      color: var(--brand-pink);
+      letter-spacing: 1.5px;
+    }
+
+    .product-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      padding-bottom: 22px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid #f0e9ee;
+    }
+
+    .product-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .product-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .product-action {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      min-width: 145px;
+    }
+
+    .product-price {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--brand-pink);
+      background-color: var(--brand-pink-light);
+      padding: 3px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .whatsapp-btn {
+      background-color: var(--whatsapp-green);
+      color: #ffffff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+      box-shadow: 0 2px 6px rgba(31, 139, 76, 0.25);
+    }
+
+    .whatsapp-btn:hover {
+      background-color: var(--whatsapp-hover);
+      transform: translateY(-1px);
+    }
+
+    .whatsapp-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ================= FOOTER / LOCATION & CONTACT ================= */
+    footer {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      text-align: center;
+      padding: 70px 20px 80px;
+      border-top: 4px solid var(--brand-pink);
+    }
+
+    .footer-logo {
+      margin-bottom: 34px;
+    }
+
+    .footer-logo .cursive {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.2rem;
+      color: var(--gold-light);
+      text-shadow: 0 0 12px var(--gold-glow);
+      display: block;
+      line-height: 0.9;
+    }
+
+    .footer-logo .serif {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #ffffff;
+      letter-spacing: 1.5px;
+    }
+
+    .store-hours {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.05rem;
+      letter-spacing: 1.2px;
+      color: #e0e0e0;
+      margin-bottom: 26px;
+      text-transform: uppercase;
+    }
+
+    .store-phone {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 1.5px;
+      color: var(--gold-light);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 28px;
+      padding: 6px 20px;
+      border: 1px solid rgba(255, 226, 153, 0.35);
+      border-radius: 30px;
+    }
+
+    .store-address {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.08rem;
+      letter-spacing: 0.9px;
+      line-height: 1.9;
+      color: #dcdcdc;
+      margin-bottom: 36px;
+    }
+
+    .social-handles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #24201d;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      border: 1px solid rgba(230, 0, 126, 0.4);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .social-pill:hover {
+      background-color: var(--brand-pink);
+      transform: translateY(-2px);
+    }
+
+    .footer-slogan {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(1.9rem, 5vw, 2.6rem);
+      color: #ffffff;
+      margin-top: 10px;
+    }
+
+    .footer-slogan span {
+      color: var(--brand-pink);
+    }
+
+    /* Mobile Responsive Adjustments */
+    @media (max-width: 520px) {
+      .category-card {
+        padding: 24px 18px;
+      }
+      .product-item {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .product-action {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 4px;
+      }
+      .price-list-pill {
+        font-size: 1.5rem;
+        padding: 8px 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAVIGATION BAR -->
+  <header>
+    <a href="#" class="brand-mini">
+      <span class="cursive">Shop</span>
+      <span class="serif">Lady Lia</span>
+    </a>
+    <button class="menu-toggle" id="menuBtn" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- MOBILE/DROPDOWN MENU -->
+  <nav class="nav-drawer" id="navDrawer">
+    <a href="#joggers" onclick="closeMenu()">Palazzo &amp; Unisex Joggers</a>
+    <a href="#tops" onclick="closeMenu()">Spandex &amp; Basic Tops</a>
+    <a href="#bags" onclick="closeMenu()">Signature Bags</a>
+    <a href="#location" onclick="closeMenu()">Locations &amp; Contact</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <!-- Pink Clothes Hanger Icon -->
+    <svg class="hanger-icon" viewBox="0 0 64 40" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M32 10 C32 4, 40 4, 40 9 C40 13, 32 15, 32 19 M6 36 L32 19 L58 36 Z"/>
+    </svg>
+
+    <div class="signage-wrapper">
+      <div class="signage-shop">Shop</div>
+      <div class="signage-ladylia">
+        Lady Lia
+        <svg class="bag-icon" viewBox="0 0 24 24">
+          <path d="M6 7V6a6 6 0 0 1 12 0v1h3l1 15H2L3 7h3zm2 0h8V6a4 4 0 0 0-8 0v1z"/>
+        </svg>
+      </div>
+      <svg class="signage-swash" viewBox="0 0 300 24" fill="none">
+        <path d="M5 18 C 90 4, 150 22, 295 8" stroke="#ffe299" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <p class="hero-tagline">Luxury for less</p>
+    <h1 class="hero-sub">Shop Smart. Shop Stylish. Shop Lady Lia</h1>
+    <a href="#catalog" class="cta-button">View Price List</a>
+  </section>
+
+  <!-- CLOTHING CATALOG / PRICE LIST SECTION -->
+  <main class="catalog-section" id="catalog">
+    <div class="price-list-banner">
+      <h2 class="price-list-pill">Price List</h2>
+    </div>
+
+    <!-- CATEGORY 1: PALAZZO JOGGERS, UNISEX JOGGERS & SHORTS -->
+    <div class="category-card" id="joggers">
+      <h3 class="category-heading">
+        Joggers, Palazzo &amp; Shorts
+        <span>PRICE (GHC)</span>
+      </h3>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">Quality Palazzo &amp; Unisex Joggers (Standard Fit)</h4>
+          <p class="product-desc">Ultra-soft, wide-leg and standard fit drawstring joggers with deep side pockets in vibrant pink, plum, mustard, grey, and classic black.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 160</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('Quality Palazzo / Unisex Joggers (Standard Fit)', 'GHC 160')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">Unisex Joggers (3XL)</h4>
+          <p class="product-desc">Plus-size relaxed lounge and streetwear fit crafted with breathable heavyweight cotton-blend fleece.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 200</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('Unisex Joggers (3XL)', 'GHC 200')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">Unisex Jorts</h4>
+          <p class="product-desc">Stylish relaxed-cut denim and jersey jorts built for effortless everyday pairing.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 130</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('Unisex Jorts', 'GHC 130')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">Unisex Knee-Length Sweat Shorts</h4>
+          <p class="product-desc">Soft fleece knee-length sweat shorts featuring an adjustable drawstring waist and deep pockets.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 120</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('Unisex Knee-Length Sweat Shorts', 'GHC 120')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORY 2: SPANDEX & BASIC TOPS / JACKETS -->
+    <div class="category-card" id="tops">
+      <h3 class="category-heading">
+        Spandex Tops, Basic Tops &amp; Jackets
+        <span>PRICE (GHC)</span>
+      </h3>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">Quality Spandex Basic Top (Short &amp; Long Sleeve)</h4>
+          <p class="product-desc">Sleek, figure-smoothing four-way stretch spandex basic tops available in short sleeve and long sleeve cuts to pair seamlessly with palazzo joggers.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 120</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('Quality Spandex Basic Top (Short/Long Sleeve)', 'GHC 120')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">Spandex Jacket</h4>
+          <p class="product-desc">Contoured zip-up stretch spandex jacket designed for a sleek athletic or casual layered look.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 200</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('Spandex Jacket', 'GHC 200')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORY 3: BAGS & ACCESSORIES -->
+    <div class="category-card" id="bags">
+      <h3 class="category-heading">
+        Signature Bags
+        <span>PRICE (GHC)</span>
+      </h3>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">VF Bags</h4>
+          <p class="product-desc">Chic structured handbag to elevate your everyday outfits.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 145</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('VF Bag', 'GHC 145')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">L19 Bags</h4>
+          <p class="product-desc">Signature L19 statement bag crafted with clean lines and premium hardware.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 150</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('L19 Bag', 'GHC 150')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER / LOCATION & CONTACT -->
+  <footer id="location">
+    <div class="footer-logo">
+      <span class="cursive">Shop</span>
+      <span class="serif">Lady Lia</span>
+    </div>
+
+    <p class="store-hours">IN-STORE &amp; NATIONWIDE DELIVERY | Mon to Sat | 9:00am – 8:00pm</p>
+
+    <a href="tel:+233534649900" class="store-phone">0534649900 / +233 53 464 9900</a>
+
+    <div class="store-address">
+      <p>Adenta-Dodowa Rd</p>
+      <p>Tema C3</p>
+      <p>Greater Accra, Ghana</p>
+    </div>
+
+    <div class="social-handles">
+      <a href="https://instagram.com/shop.lady.lia" target="_blank" rel="noopener" class="social-pill">
+        Instagram: @shop.lady.lia
+      </a>
+      <a href="https://tiktok.com/@shop.lady.lia" target="_blank" rel="noopener" class="social-pill">
+        TikTok: @shop.lady.lia
+      </a>
+      <a href="https://snapchat.com/add/juliah-w" target="_blank" rel="noopener" class="social-pill">
+        Snapchat: @juliah-w
+      </a>
+    </div>
+
+    <div class="footer-slogan">
+      Shop Smart. Shop Stylish. Shop Lady Lia <span>&hearts;</span>
+    </div>
+  </footer>
+
+  <script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Lady Lia | Luxury For Less</title>
+  
+  <!-- Google Fonts: Great Vibes (Stylish Cursive), Playfair Display (Luxury Serif), Oswald & Inter (Clean Catalog Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #141210;
+      --bg-cream: #f6f2ee;
+      --card-white: #ffffff;
+      --gold-light: #ffe299;
+      --gold-primary: #d4a038;
+      --gold-glow: rgba(255, 196, 77, 0.75);
+      --brand-pink: #e6007e;
+      --brand-pink-light: #fce4f2;
+      --accent-rust: #9e3a26;
+      --whatsapp-green: #1f8b4c;
+      --whatsapp-hover: #186e3b;
+      --text-dark: #1f1f1f;
+      --text-muted: #595959;
+      --text-light: #f5f5f5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* ================= HEADER & NAVIGATION ================= */
+    header {
+      background-color: var(--bg-dark);
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(212, 160, 56, 0.25);
+    }
+
+    .brand-mini {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      text-decoration: none;
+    }
+
+    .brand-mini .cursive {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: var(--gold-light);
+      text-shadow: 0 0 8px var(--gold-glow);
+    }
+
+    .brand-mini .serif {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    .menu-toggle {
+      background-color: var(--brand-pink);
+      border: none;
+      width: 52px;
+      height: 48px;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    .menu-toggle:hover {
+      background-color: #c4006b;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 28px;
+      height: 3.5px;
+      background-color: #ffffff;
+      border-radius: 2px;
+    }
+
+    /* Slide-down Navigation Drawer */
+    .nav-drawer {
+      display: none;
+      background-color: #1c1917;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid var(--brand-pink);
+    }
+
+    .nav-drawer.open {
+      display: block;
+    }
+
+    .nav-drawer a {
+      display: block;
+      color: var(--text-light);
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 1.5px;
+      padding: 12px 0;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-drawer a:hover {
+      color: var(--gold-light);
+    }
+
+    /* ================= HERO SECTION (WOOD SLAT & BACKLIT SIGN) ================= */
+    .hero {
+      min-height: 80vh;
+      background: 
+        radial-gradient(circle at center, rgba(20, 18, 16, 0.42) 0%, rgba(12, 10, 8, 0.9) 100%),
+        repeating-linear-gradient(
+          90deg,
+          #3b2316 0px,
+          #3b2316 14px,
+          #1a0f0a 14px,
+          #1a0f0a 22px
+        );
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+
+    /* Clothes Hanger Emblem from Flyer */
+    .hanger-icon {
+      width: 64px;
+      height: 38px;
+      stroke: var(--brand-pink);
+      stroke-width: 3.5;
+      fill: none;
+      margin-bottom: 6px;
+      filter: drop-shadow(0 0 8px rgba(230, 0, 126, 0.5));
+    }
+
+    /* Backlit Storefront Signage Recreation */
+    .signage-wrapper {
+      margin-bottom: 22px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .signage-shop {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(3.8rem, 10vw, 6.2rem);
+      color: #fff3d1;
+      line-height: 0.85;
+      font-weight: 400;
+      text-shadow: 
+        0 0 10px var(--gold-glow),
+        0 0 24px var(--gold-glow),
+        0 0 45px rgba(212, 160, 56, 0.6);
+      transform: rotate(-3deg);
+      margin-bottom: 4px;
+    }
+
+    .signage-ladylia {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 9vw, 5.5rem);
+      color: #fff6db;
+      letter-spacing: 2px;
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 12px;
+      text-shadow: 
+        0 0 12px var(--gold-glow),
+        0 0 28px var(--gold-glow),
+        0 4px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .bag-icon {
+      width: clamp(28px, 6vw, 46px);
+      height: clamp(32px, 6.5vw, 50px);
+      fill: var(--gold-light);
+      filter: drop-shadow(0 0 10px var(--gold-glow));
+      transform: translateY(4px);
+    }
+
+    .signage-swash {
+      width: 85%;
+      height: 18px;
+      margin: 8px auto 0;
+      display: block;
+      filter: drop-shadow(0 0 8px var(--gold-glow));
+    }
+
+    .hero-tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.3rem, 3.8vw, 1.9rem);
+      color: #ffffff;
+      letter-spacing: 3px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .hero-sub {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+      color: var(--gold-light);
+      margin-bottom: 32px;
+    }
+
+    .cta-button {
+      background-color: var(--brand-pink);
+      color: #ffffff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 42px;
+      border-radius: 30px;
+      box-shadow: 0 6px 20px rgba(230, 0, 126, 0.4);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #c4006b;
+      transform: translateY(-2px);
+    }
+
+    /* ================= CATALOG / PRICE LIST SECTION ================= */
+    .catalog-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 55px 20px 70px;
+    }
+
+    .price-list-banner {
+      text-align: center;
+      margin-bottom: 38px;
+      position: relative;
+    }
+
+    .price-list-pill {
+      display: inline-block;
+      background-color: var(--brand-pink);
+      color: #ffffff;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 8px 38px;
+      border-radius: 40px;
+      box-shadow: 0 4px 14px rgba(230, 0, 126, 0.25);
+    }
+
+    .category-card {
+      background-color: var(--card-white);
+      border-radius: 18px;
+      padding: 32px 26px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+      border-top: 4px solid var(--brand-pink);
+    }
+
+    .category-heading {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 22px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--brand-pink-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .category-heading span {
+      font-size: 0.95rem;
+      color: var(--brand-pink);
+      letter-spacing: 1.5px;
+    }
+
+    .product-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      padding-bottom: 22px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid #f0e9ee;
+    }
+
+    .product-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    .product-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+
+    .product-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .product-action {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+      min-width: 145px;
+    }
+
+    .product-price {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--brand-pink);
+      background-color: var(--brand-pink-light);
+      padding: 3px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+
+    .whatsapp-btn {
+      background-color: var(--whatsapp-green);
+      color: #ffffff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+      box-shadow: 0 2px 6px rgba(31, 139, 76, 0.25);
+    }
+
+    .whatsapp-btn:hover {
+      background-color: var(--whatsapp-hover);
+      transform: translateY(-1px);
+    }
+
+    .whatsapp-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ================= FOOTER / LOCATION & CONTACT ================= */
+    footer {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      text-align: center;
+      padding: 70px 20px 80px;
+      border-top: 4px solid var(--brand-pink);
+    }
+
+    .footer-logo {
+      margin-bottom: 34px;
+    }
+
+    .footer-logo .cursive {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.2rem;
+      color: var(--gold-light);
+      text-shadow: 0 0 12px var(--gold-glow);
+      display: block;
+      line-height: 0.9;
+    }
+
+    .footer-logo .serif {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #ffffff;
+      letter-spacing: 1.5px;
+    }
+
+    .store-hours {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.05rem;
+      letter-spacing: 1.2px;
+      color: #e0e0e0;
+      margin-bottom: 26px;
+      text-transform: uppercase;
+    }
+
+    .store-phone {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 1.5px;
+      color: var(--gold-light);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 28px;
+      padding: 6px 20px;
+      border: 1px solid rgba(255, 226, 153, 0.35);
+      border-radius: 30px;
+    }
+
+    .store-address {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.08rem;
+      letter-spacing: 0.9px;
+      line-height: 1.9;
+      color: #dcdcdc;
+      margin-bottom: 36px;
+    }
+
+    .social-handles {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+      margin-bottom: 40px;
+    }
+
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #24201d;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      border: 1px solid rgba(230, 0, 126, 0.4);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .social-pill:hover {
+      background-color: var(--brand-pink);
+      transform: translateY(-2px);
+    }
+
+    .footer-slogan {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(1.9rem, 5vw, 2.6rem);
+      color: #ffffff;
+      margin-top: 10px;
+    }
+
+    .footer-slogan span {
+      color: var(--brand-pink);
+    }
+
+    /* Mobile Responsive Adjustments */
+    @media (max-width: 520px) {
+      .category-card {
+        padding: 24px 18px;
+      }
+      .product-item {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .product-action {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 4px;
+      }
+      .price-list-pill {
+        font-size: 1.5rem;
+        padding: 8px 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAVIGATION BAR -->
+  <header>
+    <a href="#" class="brand-mini">
+      <span class="cursive">Shop</span>
+      <span class="serif">Lady Lia</span>
+    </a>
+    <button class="menu-toggle" id="menuBtn" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- MOBILE/DROPDOWN MENU -->
+  <nav class="nav-drawer" id="navDrawer">
+    <a href="#joggers" onclick="closeMenu()">Palazzo &amp; Unisex Joggers</a>
+    <a href="#tops" onclick="closeMenu()">Spandex &amp; Basic Tops</a>
+    <a href="#bags" onclick="closeMenu()">Signature Bags</a>
+    <a href="#location" onclick="closeMenu()">Locations &amp; Contact</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <!-- Pink Clothes Hanger Icon -->
+    <svg class="hanger-icon" viewBox="0 0 64 40" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M32 10 C32 4, 40 4, 40 9 C40 13, 32 15, 32 19 M6 36 L32 19 L58 36 Z"/>
+    </svg>
+
+    <div class="signage-wrapper">
+      <div class="signage-shop">Shop</div>
+      <div class="signage-ladylia">
+        Lady Lia
+        <svg class="bag-icon" viewBox="0 0 24 24">
+          <path d="M6 7V6a6 6 0 0 1 12 0v1h3l1 15H2L3 7h3zm2 0h8V6a4 4 0 0 0-8 0v1z"/>
+        </svg>
+      </div>
+      <svg class="signage-swash" viewBox="0 0 300 24" fill="none">
+        <path d="M5 18 C 90 4, 150 22, 295 8" stroke="#ffe299" stroke-width="3.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <p class="hero-tagline">Luxury for less</p>
+    <h1 class="hero-sub">Shop Smart. Shop Stylish. Shop Lady Lia</h1>
+    <a href="#catalog" class="cta-button">View Price List</a>
+  </section>
+
+  <!-- CLOTHING CATALOG / PRICE LIST SECTION -->
+  <main class="catalog-section" id="catalog">
+    <div class="price-list-banner">
+      <h2 class="price-list-pill">Price List</h2>
+    </div>
+
+    <!-- CATEGORY 1: PALAZZO JOGGERS, UNISEX JOGGERS & SHORTS -->
+    <div class="category-card" id="joggers">
+      <h3 class="category-heading">
+        Joggers, Palazzo &amp; Shorts
+        <span>PRICE (GHC)</span>
+      </h3>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">Quality Palazzo &amp; Unisex Joggers (Standard Fit)</h4>
+          <p class="product-desc">Ultra-soft, wide-leg and standard fit drawstring joggers with deep side pockets in vibrant pink, plum, mustard, grey, and classic black.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 160</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('Quality Palazzo / Unisex Joggers (Standard Fit)', 'GHC 160')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">Unisex Joggers (3XL)</h4>
+          <p class="product-desc">Plus-size relaxed lounge and streetwear fit crafted with breathable heavyweight cotton-blend fleece.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 200</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('Unisex Joggers (3XL)', 'GHC 200')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">Unisex Jorts</h4>
+          <p class="product-desc">Stylish relaxed-cut denim and jersey jorts built for effortless everyday pairing.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 130</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('Unisex Jorts', 'GHC 130')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">Unisex Knee-Length Sweat Shorts</h4>
+          <p class="product-desc">Soft fleece knee-length sweat shorts featuring an adjustable drawstring waist and deep pockets.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 120</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('Unisex Knee-Length Sweat Shorts', 'GHC 120')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORY 2: SPANDEX & BASIC TOPS / JACKETS -->
+    <div class="category-card" id="tops">
+      <h3 class="category-heading">
+        Spandex Tops, Basic Tops &amp; Jackets
+        <span>PRICE (GHC)</span>
+      </h3>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">Quality Spandex Basic Top (Short &amp; Long Sleeve)</h4>
+          <p class="product-desc">Sleek, figure-smoothing four-way stretch spandex basic tops available in short sleeve and long sleeve cuts to pair seamlessly with palazzo joggers.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 120</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('Quality Spandex Basic Top (Short/Long Sleeve)', 'GHC 120')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">Spandex Jacket</h4>
+          <p class="product-desc">Contoured zip-up stretch spandex jacket designed for a sleek athletic or casual layered look.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 200</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('Spandex Jacket', 'GHC 200')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CATEGORY 3: BAGS & ACCESSORIES -->
+    <div class="category-card" id="bags">
+      <h3 class="category-heading">
+        Signature Bags
+        <span>PRICE (GHC)</span>
+      </h3>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">VF Bags</h4>
+          <p class="product-desc">Chic structured handbag to elevate your everyday outfits.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 145</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('VF Bag', 'GHC 145')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-info">
+          <h4 class="product-title">L19 Bags</h4>
+          <p class="product-desc">Signature L19 statement bag crafted with clean lines and premium hardware.</p>
+        </div>
+        <div class="product-action">
+          <div class="product-price">GHC 150</div>
+          <button class="whatsapp-btn" onclick="orderViaWhatsApp('L19 Bag', 'GHC 150')">
+            <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zm-3.423-14.416c-6.627 0-12 5.373-12 12 0 2.126.556 4.122 1.529 5.854l-1.529 5.586 5.719-1.5c1.682.899 3.602 1.41 5.645 1.41 6.627 0 12-5.373 12-12 0-6.627-5.373-12-12-12z"/></svg>
+            Order via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER / LOCATION & CONTACT -->
+  <footer id="location">
+    <div class="footer-logo">
+      <span class="cursive">Shop</span>
+      <span class="serif">Lady Lia</span>
+    </div>
+
+    <p class="store-hours">IN-STORE &amp; NATIONWIDE DELIVERY | Mon to Sat | 9:00am – 8:00pm</p>
+
+    <a href="tel:+233534649900" class="store-phone">0534649900 / +233 53 464 9900</a>
+
+    <div class="store-address">
+      <p>Adenta-Dodowa Rd</p>
+      <p>Tema C3</p>
+      <p>Greater Accra, Ghana</p>
+    </div>
+
+    <div class="social-handles">
+      <a href="https://instagram.com/shop.lady.lia" target="_blank" rel="noopener" class="social-pill">
+        Instagram: @shop.lady.lia
+      </a>
+      <a href="https://tiktok.com/@shop.lady.lia" target="_blank" rel="noopener" class="social-pill">
+        TikTok: @shop.lady.lia
+      </a>
+      <a href="https://snapchat.com/add/juliah-w" target="_blank" rel="noopener" class="social-pill">
+        Snapchat: @juliah-w
+      </a>
+    </div>
+
+    <div class="footer-slogan">
+      Shop Smart. Shop Stylish. Shop Lady Lia <span>&hearts;</span>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Mobile Navigation Drawer Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const navDrawer = document.getElementById('navDrawer');
+
+    menuBtn.addEventListener('click', () => {
+      navDrawer.classList.toggle('open');
+    });
+
+    function closeMenu() {
+      navDrawer.classList.remove('open');
+    }
+
+    // 2. Direct WhatsApp Order Integration (Configured to 0534649900)
+    const WHATSAPP_NUMBER = "233534649900";
+
+    function orderViaWhatsApp(itemName, itemPrice) {
+      const message = 
+        "Hello Shop Lady Lia! I would like to order:\n\n" +
+        "Item:" ${itemName}"\n" +
+        "Price:" ${itemPrice}"\n" +
+        "Preferred Color:\n" +
+        "Size:\n" +
+        "Delivery Location: ";
+
+      const whatsappUrl = https://api.whatsapp.com/send?phone="+
+s&{WHATSAPP_NUMBER}?"&text="+{encodeURIComponent(message)};
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    }
+  </script>
+</body>
+</html>
+             }
+  </script>
+
+</body>
+</html>		
